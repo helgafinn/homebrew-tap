@@ -20,7 +20,7 @@ class Xcprune < Formula
     # A tree with one asset nothing references should report exactly that.
     (testpath/"Assets.xcassets/orphan.imageset").mkpath
     (testpath/"Assets.xcassets/orphan.imageset/Contents.json").write(
-      '{"info":{"version":1,"author":"xcode"}}'
+      '{"info":{"version":1,"author":"xcode"}}',
     )
     (testpath/"View.swift").write("let unrelated = 1\n")
 
