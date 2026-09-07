@@ -1,8 +1,8 @@
 class Xcprune < Formula
   desc "Find unused images, colors, and localization keys in an Xcode project"
   homepage "https://github.com/helgafinn/xcprune"
-  url "https://github.com/helgafinn/xcprune/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "500646663f841b3855d37498bd2fc0bb97f7666002d495922e25e2863f9ad6c8"
+  url "https://github.com/helgafinn/xcprune/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "269fe15e4067314320148aeb062fa0bd85a01a4c1917d4a0c4ce9128bc8419bc"
   license "MIT"
   head "https://github.com/helgafinn/xcprune.git", branch: "main"
 
