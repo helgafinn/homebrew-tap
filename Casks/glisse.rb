@@ -21,24 +21,21 @@ cask "glisse" do
   uninstall quit: "xyz.glisse.Glisse"
 
   zap trash: [
-    "~/Library/Preferences/xyz.glisse.Glisse.plist",
     "~/Library/Caches/xyz.glisse.Glisse",
     "~/Library/HTTPStorages/xyz.glisse.Glisse",
+    "~/Library/Preferences/xyz.glisse.Glisse.plist",
   ]
 
   caveats do
     <<~EOS
-      Glissé is ad-hoc signed and not notarised, so Gatekeeper will refuse to open
-      it after a normal install. Either install without quarantine:
-
-        brew install --cask --no-quarantine helgafinn/tap/glisse
-
-      or clear the flag afterwards:
+      Glissé is ad-hoc signed and not notarised, so Gatekeeper may refuse its
+      first launch. After installing, either right-click Glissé in /Applications
+      and choose Open, or clear the quarantine flag:
 
         xattr -d com.apple.quarantine "/Applications/Glissé.app"
 
-      It needs Accessibility permission to see trackpad touches and drive the
-      system HUD: System Settings -> Privacy & Security -> Accessibility.
+      Core edge gestures need no permission. Accessibility enables the system HUD
+      and optional extras: System Settings -> Privacy & Security -> Accessibility.
 
       Because the signature is ad-hoc, macOS forgets that grant whenever the app
       is updated, so you will have to give it again after each upgrade.
