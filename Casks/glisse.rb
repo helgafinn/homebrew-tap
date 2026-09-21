@@ -28,11 +28,20 @@ cask "glisse" do
 
   caveats do
     <<~EOS
-      Glissé is ad-hoc signed and not notarised, so Gatekeeper may refuse its
-      first launch. After installing, either right-click Glissé in /Applications
-      and choose Open, or clear the quarantine flag:
+      Glissé is ad-hoc signed and not notarised, so macOS blocks its first
+      launch with "Glissé was blocked to protect your Mac".
 
-        xattr -d com.apple.quarantine "/Applications/Glissé.app"
+      Allow it once, either way:
+
+        1. Open Glissé, dismiss the warning, then go to System Settings ->
+           Privacy & Security -> Security and click "Open Anyway".
+
+        2. Or run:
+
+           xattr -dr com.apple.quarantine "/Applications/Glissé.app"
+
+      On macOS 15 and later, Control-clicking the app and choosing Open does
+      not work; Apple removed that shortcut.
 
       Core edge gestures need no permission. Accessibility enables the system HUD
       and optional extras: System Settings -> Privacy & Security -> Accessibility.
